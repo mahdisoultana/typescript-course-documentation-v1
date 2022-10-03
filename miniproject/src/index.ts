@@ -38,7 +38,7 @@ function handleSubmit(e: SubmitEvent) {
   createTodo(todo);
 }
 
-function setStorageTodo() {
+function setStorageTodo(): void {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 function createTodo(todo: Todo): void {

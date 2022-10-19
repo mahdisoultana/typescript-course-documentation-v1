@@ -46,7 +46,13 @@
 
 // console.log(mainPlayer)
 
+
+// static we can use it in front of propertie or method
+//mean that it's not exist on each instance
+//it's exist on the Player class it self
+//static tell javascript that this property or method exist only in the class
 class Player{
+    static description='this is static proerty in the class it self'
     #live = 0
     #goals=10
     constructor(name) {
@@ -56,7 +62,7 @@ class Player{
         return this.#live
     }
     get info() {
-        return `player ${this.name} his lives ${this.#live} ,his goals ${this.goals}`
+        return `player ${this.name} his lives ${this.#live} ,his goals ${this.#goals}`
     }
     set goals(newGoals) {
 
@@ -65,6 +71,9 @@ class Player{
             throw new Error('no you cant add negative goals or up then 100 goal')
         }
         return  this.#goals=newGoals
+    }
+    #secret() {
+        console.log('this is secret ')
     }
 
 }
@@ -75,3 +84,22 @@ console.log(pl1);
 pl1.goals=4
 // pl1.info=3434
 console.log(pl1)
+
+//inheritance
+
+
+class AdminPlayer extends Player{
+    isAdmin = true
+    constructor(name,power) {
+        super(name)
+        this.power=power
+    }
+    //we can overwrite methods
+    // getLive() {
+    //     return this.power
+    // }
+}
+
+const admin = new AdminPlayer('mahdi', ['restor', 'start'])
+///
+console.log(admin)

@@ -19,7 +19,19 @@
 // }
 //parameter shorthand
 class Player {
-    constructor(public first:string, public last:string) {}
+    // private _score: number = 0;
+    constructor(public first: string, public last: string, private _score: number) { }
+    //setters and getters in TS
+    get fullName(): string {
+        return `${this.first} ${this.last}`
+    }
+    set score(newScore: number) {
+        if (newScore < 0) {
+            throw new Error("score cannot be negative");
+
+        }
+        this._score = newScore;
+    }
 }
 // ===
 // class PlayerCopy {
@@ -30,7 +42,7 @@ class Player {
 //         this.last = last;
 //     }
 // }
-const elton = new Player('elton', 'nos')
+const elton = new Player('elton', 'nos', 0)
 //we can't change it  that because we have readonly
 // elton.first=989
 // elton.score

@@ -19,36 +19,27 @@
 //     // }
 // }
 //parameter shorthand
-class Player {
-    // private _score: number = 0;
-    constructor(first, last, _score) {
-        this.first = first;
-        this.last = last;
-        this._score = _score;
-    }
-    //setters and getters in TS
-    get fullName() {
-        return `${this.first} ${this.last}`;
-    }
-    set score(newScore) {
-        if (newScore < 0) {
-            throw new Error("score cannot be negative");
-        }
-        this._score = newScore;
+// class Player {
+//     // private _score: number = 0;
+//     constructor(public first: string, public last: string, private _score: number) { }
+//     //setters and getters in TS
+//     get fullName(): string {
+//         return `${this.first} ${this.last}`
+//     }
+//     set score(newScore: number) {
+//         if (newScore < 0) {
+//             throw new Error("score cannot be negative");
+class Phone {
+    // type: string = 'sumsang'
+    // price: number = 100
+    // type: string;
+    // price: number;
+    // constructor(type: string, price: number) {
+    //     this.type = type;
+    //     this.price = price;
+    // }
+    constructor(type, price) {
+        this.type = type;
+        this.price = price;
     }
 }
-// ===
-// class PlayerCopy {
-//     public first: string;
-//     public last: string;
-//     constructor(first: string, last: string) {
-//         this.first = first;
-//         this.last = last;
-//     }
-// }
-const elton = new Player('elton', 'nos', 0);
-//we can't change it  that because we have readonly
-// elton.first=989
-// elton.score
-// elton.secretMethod()
-console.log(elton);

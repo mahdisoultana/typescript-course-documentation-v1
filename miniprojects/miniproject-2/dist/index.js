@@ -4,10 +4,11 @@ const input = document.getElementById('input');
 const ul = document.querySelector("ul");
 const todos = getTodosStorage();
 function getTodosStorage() {
-    if (localStorage.getItem('todos') === null || localStorage.getItem('todos') === '') {
+    const todosStorage = localStorage.getItem('todos');
+    if (todosStorage === null) {
         return [];
     }
-    const todos = JSON.parse(localStorage.getItem('todos'));
+    const todos = JSON.parse(todosStorage);
     todos.forEach(todo => {
         addTodo(todo);
     });

@@ -8,10 +8,11 @@ interface TodoItem {
 const todos: TodoItem[] = getTodosStorage()
 
 function getTodosStorage(): TodoItem[] {
-    if (localStorage.getItem('todos') === null || localStorage.getItem('todos') === '') {
+    const todosStorage = localStorage.getItem('todos')
+    if (todosStorage === null) {
         return []
     }
-    const todos = JSON.parse(localStorage.getItem('todos')!) as TodoItem[]
+    const todos = JSON.parse(todosStorage) as TodoItem[]
     todos.forEach(todo => {
         addTodo(todo)
     })

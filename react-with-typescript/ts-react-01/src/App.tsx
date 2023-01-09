@@ -1,5 +1,20 @@
+import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
+import ShoppingForm from './components/ShoppingForm';
+import ShoppingList from './components/ShoppingList';
+import Item from './models/item';
 function App(): JSX.Element {
-  return <h1>Awesome let's get started !</h1>;
+  const [items, setItems] = useState<Item[]>([]);
+  const id = uuid();
+  function addItem(name: string, quantity: number) {
+    setItems([...items, { id, name, quantity }]);
+  }
+  return (
+    <>
+      <ShoppingForm addItem={addItem} />
+      <ShoppingList items={items} />
+    </>
+  );
 }
 
 export default App;

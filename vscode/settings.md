@@ -71,7 +71,7 @@
 
 "files.exclude": {
 "**/.git": true,
-"**/.DS_Store": true,
+"**/.DS*Store": true,
 "jspm_packages": true,
 "node_modules": true
 },
@@ -101,8 +101,8 @@
 "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
 "files.associations": {
-"_.jsx": "javascriptreact",
-"_.js": "javascript"
+"*.jsx": "javascriptreact",
+"\_.js": "javascript"
 // "\*.js": "javascriptreact"
 },
 "workbench.iconTheme": "vscode-icons",

@@ -6,7 +6,14 @@
 "source.organizeImports": true,
 "source.sortMembers": true
 },
-"eslint.validate": ["javascript", "typescript", "typescriptreact"],
+"emmet.triggerExpansionOnTab": true,
+"eslint.validate": [
+"javascript",
+"typescript",
+"typescriptreact",
+"javascriptreact",
+"html"
+],
 "editor.formatOnSave": true,
 // Enable per-language
 "[javascript]": {
@@ -15,6 +22,14 @@
 "[json]": {
 "editor.formatOnSave": true
 },
+"emmet.includeLanguages": {
+"postcss": "css",
+"markdown": "html",
+"javascript": "javascriptreact",
+"typescript": "typescriptreact",
+"vue-html": "html"
+},
+
 "emmet.syntaxProfiles": {
 "javascript": "jsx",
 "xml": {
@@ -46,13 +61,13 @@
 "terminal.integrated.fontWeightBold": "500",
 "terminal.integrated.lineHeight": 1,
 
-// "editor.defaultFormatter": "esbenp.prettier-vscode", // Use prettier as default formatter
+"editor.defaultFormatter": "esbenp.prettier-vscode", // Use prettier as default formatter
 "editor.formatOnPaste": true, // format code on paste
 "editor.formatOnType": true, // format code as you type
 
-// "[html,css,scss]": {
-// "editor.defaultFormatter": "esbenp.prettier-vscode"
-// },
+"[html,css,scss]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
 
 "files.exclude": {
 "**/.git": true,
@@ -69,21 +84,21 @@
 "**/.git/subtree-cache/**": true,
 "**/node_modules/\*/**": true
 },
-
-"editor.tabSize": 4,
 "editor.multiCursorModifier": "alt",
 "editor.wordWrap": "on",
 "editor.insertSpaces": true,
 "files.encoding": "utf8",
 "[typescript]": {
+"editor.tabSize": 4,
 "editor.formatOnSave": true,
 "editor.formatOnPaste": true,
-"editor.defaultFormatter": "vscode.typescript-language-features"
+"editor.defaultFormatter": "esbenp.prettier-vscode"
 },
 "[markdown]": {
 "editor.formatOnSave": true,
 "editor.renderWhitespace": "all",
-"editor.acceptSuggestionOnEnter": "off"
+"editor.acceptSuggestionOnEnter": "off",
+"editor.defaultFormatter": "esbenp.prettier-vscode"
 },
 "files.associations": {
 "_.jsx": "javascriptreact",
@@ -106,9 +121,7 @@
 "git.autofetch": true,
 "editor.linkedEditing": true,
 "editor.stickyScroll.enabled": true,
-"[javascriptreact]": {
-"editor.defaultFormatter": "SimonSiefke.prettier-vscode"
-},
+
 "npm.keybindingsChangedWarningShown": true,
 "workbench.colorTheme": "Atom One Dark",
 "[html]": {
@@ -120,5 +133,19 @@
 "[jsonc]": {
 "editor.defaultFormatter": "esbenp.prettier-vscode"
 },
-"prettier.singleQuote": true
+"[mdx]": {
+"editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"prettier.singleQuote": true,
+"indentRainbow.colorOnWhiteSpaceOnly": true,
+// "editor.guides.bracketPairs": true,
+"indentRainbow.lightIndicatorStyleLineWidth": 1,
+// "indentRainbow.indicatorStyle": "light",
+"indentRainbow.colors": [
+"rgba(255,255,64,0.01)",
+"rgba(127,255,127,0.01)",
+"rgba(255,127,255,0.01)",
+"rgba(79,236,236,0.01)"
+],
+"indentRainbow.ignoreErrorLanguages": ["*"]
 }
